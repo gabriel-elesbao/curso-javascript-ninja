@@ -24,16 +24,17 @@ Crie uma função que adicione um valor à variável criada acima, e retorne a s
 Onde VALOR é o novo valor da variável.
 */
 function addValue(){
-   dog = 'VALOR'
-   return 'O valor da variável agora é VALOR.'
+   dog = 'cahorro'
+   return 'O valor da variável agora é ' + dog
 }
 
 // Invoque a função criada acima.
 console.log(addValue())
 
 // Qual o retorno da função? (Use comentários de bloco).
+
 /*
-O valor da variável agora é VALOR.
+O valor da variável agora é cachorro.
 */
 
 
@@ -81,32 +82,52 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 
-function exec3(n1,n2,n3){
-const result = (n1+n2)/n3
-const notAnumber = isNaN(result) ? n1+n2 : result
+//------------- Minha lógica ---------------------
+// function exec3(n1,n2,n3){
+// const result = (n1+n2)/n3
+// const notAnumber = isNaN(result) ? n1+n2 : result
 
-  if(isNaN(n1) && isNaN(n2) && isNaN(n3)){
+//   if(isNaN(n1) && isNaN(n2) && isNaN(n3)){
+//     return false
+
+//   }else if(isNaN(n2) && isNaN(n3)){
+//     return n1
+
+//   }else if(isNaN(n3)){
+//     return notAnumber
+
+//   }else if(notAnumber){
+//     return result
+
+//   }else{
+//     return null
+//   }
+
+// }
+//--------------------------------------------------
+//----------------Update aula ----------------------
+function threeArgs(a,b,c){
+  if( a !== undefined && b === undefined && c === undefined){
+    return a
+
+  }else if( a !== undefined && b!== undefined && c === undefined){
+    return a+b
+
+  }else if( a !== undefined && b !== undefined && c !== undefined){
+    return (a+b)/c
+
+  }else if( a === undefined && b === undefined && c === undefined){
     return false
-
-  }else if(isNaN(n2) && isNaN(n3)){
-    return n1
-
-  }else if(isNaN(n3)){
-    return notAnumber
-
-  }else if(notAnumber){
-    return result
-
   }else{
     return null
   }
-
 }
 
+
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
-console.log(exec3()) // false
-console.log(exec3(10)) // 10
-console.log(exec3(10,10)) // 20
-console.log(exec3(10,10,5)) // 4
+console.log(threeArgs()) // false
+console.log(threeArgs(10)) // 10
+console.log(threeArgs(10,10)) // 20
+console.log(threeArgs(10,10,5)) // 4
 
 ```
