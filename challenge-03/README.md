@@ -185,6 +185,9 @@ deve conter no retorno da frase acima é "metro" no lugar de "metros".
 método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
+
+/*---------------------------Minha Resolução-------------------------------*/
+
 pessoa.apresentacao = function(){
   const nomeCompleto = `${pessoa.nome} ${pessoa.sobrenome}`
   const sexo = pessoa.sexo
@@ -207,6 +210,28 @@ pessoa.apresentacao = function(){
   return  `Olá, eu sou o ${nomeCompleto}, tenho ${idade} anos, meu peso é ${peso} e só hoje, eu já caminhei ${metrosAndados} metros!`
 
 }
+/*----------------------------------------------------*/
+
+//Update aula, utilizei let no lugar de var e template strings
+pessoa.apresentacao = function(){
+  let  sexo = 'o';
+  let idadeAnos = 'anos'
+  let metrosCaminhados = 'metros'
+
+  if(pessoa.sexo === 'F'){
+    sexo = 'a'
+  }
+  if(pessoa.idade  === 1){
+    idade = 'ano'
+  }
+  if(pessoa.caminhouQuantosMetros === 1){
+    metrosCaminhados = 'metro'
+  }
+
+   return `Olá, eu sou ${sexo} ${pessoa.nome} ${pessoa.sobrenome}, tenho ${pessoa.idade} ${idadeAnos}, meu peso é ${pessoa.peso}kg e só hoje, eu já caminhei ${pessoa.caminhouQuantosMetros} ${metrosCaminhados}!`
+}
+
+
 
 // Agora, apresente-se ;)
 console.log(pessoa.apresentacao())
